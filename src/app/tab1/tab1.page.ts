@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {VehicleService} from '../services/vehicle.service';
 import {Router} from '@angular/router';
-import {Camera} from '@ionic-'
 
 @Component({
   selector: 'app-tab1',

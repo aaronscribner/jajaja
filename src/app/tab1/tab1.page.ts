@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {VehicleService} from '../services/vehicle.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(
+    private vehicleService: VehicleService,
+    private router: Router
+  ) {}
 
+  public submit(): void {
+    this.vehicleService.setCurrentVehicleByPlateNumber('RUBBLE');
+    this.router.navigate(['/tabs/tab2']);
+  }
 }

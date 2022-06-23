@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {VehicleInfo} from '../models/vehicle-info.model';
+import {Observable, ReplaySubject} from 'rxjs';
 import * as vehicleData from '../../assets/db/vehicles.json';
-import {Observable, ReplaySubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'

@@ -5,7 +5,8 @@
   },
   "rate": 10.99,
   "ptiLimit": 13,
-  "ltvLimit": 115
+  "ltvLimit": 115,
+  "tier": "B2"
 },
   {
     "score": {
@@ -14,7 +15,8 @@
     },
     "rate": 9.99,
     "ptiLimit": 13,
-    "ltvLimit": 125
+    "ltvLimit": 125,
+    "tier": "B1"
   },
   {
     "score": {
@@ -23,7 +25,8 @@
     },
     "rate": 8.99,
     "ptiLimit": 14,
-    "ltvLimit": 130
+    "ltvLimit": 130,
+    "tier": "A3"
   },
   {
     "score": {
@@ -32,7 +35,8 @@
     },
     "rate": 7.99,
     "ptiLimit": 15,
-    "ltvLimit": 135
+    "ltvLimit": 135,
+    "tier": "A2"
   },
   {
     "score": {
@@ -41,7 +45,8 @@
     },
     "rate": 6.49,
     "ptiLimit": 16,
-    "ltvLimit": 140
+    "ltvLimit": 140,
+    "tier": "A1"
   },
   {
     "score": {
@@ -49,6 +54,7 @@
     },
     "rate": 4.99,
     "ptiLimit": 17,
-    "ltvLimit": 140
+    "ltvLimit": 140,
+    "tier": "A+"
   }
 ]

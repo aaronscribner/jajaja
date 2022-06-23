@@ -1,7 +1,8 @@
 {
   "name": "jajaja",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular",
   "id": "8a7aa1a4"

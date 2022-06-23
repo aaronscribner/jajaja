@@ -12,6 +12,46 @@
       <ion-title size="large">Personal Info</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Street Address</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Monthly Income">
+          <ion-select-option value="1000">1000-1999</ion-select-option>
+          <ion-select-option value="2000">2000-2999</ion-select-option>
+          <ion-select-option value="3000">3000-3999</ion-select-option>
+          <ion-select-option value="4000">4000-4999</ion-select-option>
+          <ion-select-option value="5000">5000-5999</ion-select-option>
+          <ion-select-option value="6000">6000-6999</ion-select-option>
+          <ion-select-option value="7000">7000-7999</ion-select-option>
+          <ion-select-option value="100000">Balla</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Current Payment">
+          <ion-select-option value="100">100-199</ion-select-option>
+          <ion-select-option value="200">200-299</ion-select-option>
+          <ion-select-option value="300">300-399</ion-select-option>
+          <ion-select-option value="400">400-499</ion-select-option>
+          <ion-select-option value="500">500-599</ion-select-option>
+          <ion-select-option value="600">600-699</ion-select-option>
+          <ion-select-option value="700">700-799</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item lines="full">
+      <ion-label position="floating">Remaining Balance</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-button class="submit" click="submit()">QUAL ME YO!</ion-button>
+  </form>
 </ion-content>

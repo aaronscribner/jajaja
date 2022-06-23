@@ -1,0 +1,91 @@
+[{
+  "id": "10a2c162-8781-4067-be75-7e31719cee80",
+  "plateNumber": "RUBBLE",
+  "make": "Hyundai",
+  "model": "Tiburon",
+  "year": 2006,
+  "vin": "1GYS3FEJ1DR313350",
+  "remainingBalance": "3372",
+  "registrant": [
+    {
+      "name": "Nicholle Kordas",
+      "address": "787 Carpenter Drive",
+      "dob": "3/7/1999"
+    }
+  ]
+}, {
+  "id": "96014f54-c5c0-4e50-b7d2-56f3622324c4",
+  "plateNumber": "2THLESS",
+  "make": "Volkswagen",
+  "model": "Cabriolet",
+  "year": 1988,
+  "vin": "WAUMGAFL5EA938112",
+  "remainingBalance": "2648",
+  "registrant": [
+    {
+      "name": "Christabel Presshaugh",
+      "address": "2343 Washington Road",
+      "dob": "6/4/1989"
+    }
+  ]
+}, {
+  "id": "b86ebbc6-a9f1-4029-aabf-3099b29d6439",
+  "plateNumber": "STRMFLY",
+  "make": "Chevrolet",
+  "model": "Colorado",
+  "year": 2012,
+  "vin": "WVGEF9BP9ED324336",
+  "remainingBalance": "8495",
+  "registrant": [
+    {
+      "name": "Ernestus De Witt",
+      "address": "4 Hayes Crossing",
+      "dob": "12/17/1980"
+    }
+  ]
+}, {
+  "id": "04f9ec7f-5145-4df2-bbdd-9a8bd42625ad",
+  "plateNumber": "123456",
+  "make": "Chevrolet",
+  "model": "Suburban",
+  "year": 2011,
+  "vin": "SALFR2BN1CH570883",
+  "remainingBalance": "5144",
+  "registrant": [
+    {
+      "name": "Kin Penritt",
+      "address": "2679 Iowa Junction",
+      "dob": "9/4/1974"
+    }
+  ]
+}, {
+  "id": "31681cc4-22d8-4ba5-892d-ebb3e5e2d708",
+  "plateNumber": "2JZGTE",
+  "make": "Mercedes-Benz",
+  "model": "G-Class",
+  "year": 2007,
+  "vin": "2HNYD18985H690237",
+  "remainingBalance": "1743",
+  "registrant": [
+    {
+      "name": "Marcy Cominoli",
+      "address": "84 Victoria Hill",
+      "dob": "10/4/1985"
+    }
+  ]
+}, {
+  "id": "506d9103-face-4c16-bdf8-af2e8df3251a",
+  "plateNumber": "CUL8R",
+  "make": "Oldsmobile",
+  "model": "Alero",
+  "year": 2001,
+  "vin": "3D7LT2ET0BG906849",
+  "remainingBalance": "5814",
+  "registrant": [
+    {
+      "name": "Shela Lightollers",
+      "address": "55026 Texas Place",
+      "dob": "1/11/1975"
+    }
+  ]
+}]

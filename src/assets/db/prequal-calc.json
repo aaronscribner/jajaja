@@ -1,0 +1,54 @@
+[{
+  "score": {
+    "min": 210,
+    "max": 224
+  },
+  "rate": 10.99,
+  "ptiLimit": 13,
+  "ltvLimit": 115
+},
+  {
+    "score": {
+      "min": 225,
+      "max": 239
+    },
+    "rate": 9.99,
+    "ptiLimit": 13,
+    "ltvLimit": 125
+  },
+  {
+    "score": {
+      "min": 240,
+      "max": 254
+    },
+    "rate": 8.99,
+    "ptiLimit": 14,
+    "ltvLimit": 130
+  },
+  {
+    "score": {
+      "min": 255,
+      "max": 284
+    },
+    "rate": 7.99,
+    "ptiLimit": 15,
+    "ltvLimit": 135
+  },
+  {
+    "score": {
+      "min": 285,
+      "max": 334
+    },
+    "rate": 6.49,
+    "ptiLimit": 16,
+    "ltvLimit": 140
+  },
+  {
+    "score": {
+      "min": 335
+    },
+    "rate": 4.99,
+    "ptiLimit": 17,
+    "ltvLimit": 140
+  }
+]

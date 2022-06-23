@@ -24,10 +24,13 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.3",
     "@capacitor/status-bar": "1.0.8",
+    "@ionic-native/camera": "^5.36.0",
     "@ionic/angular": "^6.1.9",
+    "@ngx-progressbar/core": "^5.3.2",
     "cordova-plugin-ionic": "5.5.2",
     "ionic": "^4.1.2",
     "rxjs": "~6.6.0",
+    "tesseract.js": "^2.1.5",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
@@ -46,6 +49,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "@types/tesseract.js": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
     "eslint": "^7.6.0",
@@ -64,5 +68,10 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.7.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-camera": {}
+    }
+  }
 }

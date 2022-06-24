@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {VehicleService} from '../services/vehicle.service';
 import {Router} from '@angular/router';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import {PhotoService} from "../services/photo.service";
+import {PhotoService} from '../services/photo.service';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tab1',
@@ -10,6 +10,7 @@ import {PhotoService} from "../services/photo.service";
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  public faCamera = faCamera;
 
   constructor(
     private vehicleService: VehicleService,
@@ -18,8 +19,17 @@ export class Tab1Page {
   ) {}
 
   public submit(): void {
-    // this.vehicleService.setCurrentVehicleByPlateNumber('RUBBLE');
-    // this.router.navigate(['/tabs/tab2']);
+    this.vehicleService.setCurrentVehicleByPlateNumber('RUBBLE');
+    this.router.navigate(['/tabs/tab2']);
+  }
+
+  public takeLicensePlatePhoto() {
+    // TODO: OCR the plate, update the form
+    this.photoService.takePhoto();
+  }
+
+  public takeVinPhoto() {
+    // TODO: OCR the VIN, update the form
     this.photoService.takePhoto();
   }
 }

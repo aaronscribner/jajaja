@@ -26,11 +26,11 @@ export class PreQualService {
 
   public submitPreQualification(income: number, payment: number, vehicleData: VehicleInfo): void {
     const customScore = Math.floor(Math.random() * (400-210) + 210);
-    let lendingCalculation = this.lendingCalcs.find(x => x.score.min <= customScore && x.score.max >= customScore);
+    const lendingCalculation = this.lendingCalcs.find(x => x.score.min <= customScore && x.score.max >= customScore);
     this.tier.next(lendingCalculation.tier);
-    let paymentToIncome = payment / income * 100;
-    let loanToValue =  vehicleData.payoff / vehicleData.value * 100;
-    let approvedOrDeclined = paymentToIncome <= lendingCalculation.ptiLimit && loanToValue <= lendingCalculation.ltvLimit;
-    this.status.next(approvedOrDeclined? "Approved" : "Declined");
+    const paymentToIncome = payment / income * 100;
+    const loanToValue =  vehicleData.payoff / vehicleData.value * 100;
+    const approvedOrDeclined = paymentToIncome <= lendingCalculation.ptiLimit && loanToValue <= lendingCalculation.ltvLimit;
+    this.status.next(approvedOrDeclined? 'Approved' : 'Declined');
   }
 }

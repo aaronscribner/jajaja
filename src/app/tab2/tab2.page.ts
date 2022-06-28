@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {VehicleService} from "../services/vehicle.service";
-import {VehicleInfo} from "../models/vehicle-info.model";
-import {PreQualService} from "../services/pre-qual.service";
-import {Router} from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { VehicleService } from '../services/vehicle.service';
+import { VehicleInfo } from '../models/vehicle-info.model';
+import { PreQualService } from '../services/pre-qual.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -10,20 +11,39 @@ import {Router} from "@angular/router";
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page implements OnInit {
-  private vehicle: VehicleInfo;
+  public formGroup: FormGroup;
 
   constructor(
+    private formBuilder: FormBuilder,
     private vehicleService: VehicleService,
-    private prequalService: PreQualService,
+    private preQualService: PreQualService,
     private router: Router
   ) {}
 
   public ngOnInit() {
-    this.vehicleService.currentVehicle().subscribe(x => this.vehicle = x);
+    this.formGroup = this.formBuilder.group({
+      name: ['', Validators.required],
+      address: ['', Validators.required],
+      income: ['', Validators.required],
+      payment: ['', Validators.required],
+      payoff: ['', Validators.required]
+    });
+    console.log('init tab2');
+
+    this.vehicleService.vehicle.subscribe((vehicleInfo: VehicleInfo) => {
+      console.log(vehicleInfo);
+      this.populateVehicleData(vehicleInfo);
+    })
   }
 
   public submit(): void{
-    this.prequalService.submitPreQualification(100, 7000);
+    this.preQualService.submitPreQualification(100, 7000);
     this.router.navigate(['/tabs/tab3']);
+  }
+
+  private populateVehicleData(vehicleInfo: VehicleInfo): void {
+    this.formGroup.get('name').setValue(vehicleInfo?.registrant?.name);
+    this.formGroup.get('address').setValue(vehicleInfo?.registrant?.address);
+    this.formGroup.get('payoff').setValue(vehicleInfo?.payoff);
   }
 }

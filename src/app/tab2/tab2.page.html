@@ -12,18 +12,19 @@
       <ion-title size="large">Personal Info</ion-title>
     </ion-toolbar>
   </ion-header>
-  <form>
+
+  <form [formGroup]="formGroup">
     <ion-item lines="full">
       <ion-label position="floating">Name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="name" type="text" required></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Street Address</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="address" type="text" required></ion-input>
     </ion-item>
     <ion-list>
       <ion-item>
-        <ion-select placeholder="Monthly Income">
+        <ion-select formControlName="income" placeholder="Monthly Income">
           <ion-select-option value="1000">1000-1999</ion-select-option>
           <ion-select-option value="2000">2000-2999</ion-select-option>
           <ion-select-option value="3000">3000-3999</ion-select-option>
@@ -37,7 +38,7 @@
     </ion-list>
     <ion-list>
       <ion-item>
-        <ion-select placeholder="Current Payment">
+        <ion-select formControlName="payment" placeholder="Current Payment">
           <ion-select-option value="100">100-199</ion-select-option>
           <ion-select-option value="200">200-299</ion-select-option>
           <ion-select-option value="300">300-399</ion-select-option>
@@ -50,8 +51,8 @@
     </ion-list>
     <ion-item lines="full">
       <ion-label position="floating">Remaining Balance</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="payoff" type="text" required></ion-input>
     </ion-item>
-    <ion-button class="submit" (click)="submit()">QUAL ME YO!</ion-button>
+    <ion-button class="submit" (click)="submit()">Qualify Me</ion-button>
   </form>
 </ion-content>

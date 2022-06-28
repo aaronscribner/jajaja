@@ -13,6 +13,5 @@ export class Tab3Page implements OnInit{
 
   public ngOnInit(): void {
     this.preQualService.lendingTier().subscribe(x => this.lendingTier = x);
-    console.log(this.lendingTier);
   }
 }

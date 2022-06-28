@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {VehicleInfo} from '../models/vehicle-info.model';
-import {Observable, ReplaySubject} from 'rxjs';
 import * as vehicleData from '../../assets/db/vehicles.json';
+import {Observable, ReplaySubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,20 +13,20 @@ export class VehicleService {
 
   constructor() {
     this.vehicles = (vehicleData as any).default;
-    console.table(this.vehicles);
+  }
+
+  public get vehicle(): Observable<VehicleInfo> {
+    return this.currentVehicle$;
   }
 
   public setCurrentVehicleByPlateNumber(plateNumber: string): void {
     const vehicle = this.vehicles.find(x => x.plateNumber === plateNumber);
-    console.log(plateNumber);
     this.currentVehicle$.next(vehicle);
   }
 
   public setCurrentVehicleByVin(vin: string): void {
-    this.currentVehicle$.next(this.vehicles.find(x => x.vin === vin));
-  }
-
-  public currentVehicle(): Observable<VehicleInfo> {
-    return this.currentVehicle$;
+    console.log(vin);
+    const vehicle = this.vehicles.find(x => x.vin === vin);
+    this.currentVehicle$.next(vehicle);
   }
 }

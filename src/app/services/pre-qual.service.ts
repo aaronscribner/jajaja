@@ -12,7 +12,6 @@ export class PreQualService {
 
   constructor() {
     this.lendingCalcs = (lendingCalcs as any).default;
-    console.table(this.lendingCalcs);
   }
 
   public submitPreQualification(payment: number, income: number): void {

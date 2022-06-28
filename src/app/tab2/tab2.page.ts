@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page implements OnInit {
   public formGroup: FormGroup;
+  private vehicleInfo: VehicleInfo;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,11 +34,12 @@ export class Tab2Page implements OnInit {
     this.vehicleService.vehicle.subscribe((vehicleInfo: VehicleInfo) => {
       console.log(vehicleInfo);
       this.populateVehicleData(vehicleInfo);
+      this.vehicleInfo = vehicleInfo;
     });
   }
 
   public submit(): void{
-    this.preQualService.submitPreQualification(100, 7000);
+    this.preQualService.submitPreQualification(this.formGroup.get('income').value, this.formGroup.get('payment').value, this.vehicleInfo);
     this.router.navigate(['/tabs/tab3']);
   }
 

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {PreQualCalc} from '../models/pre-qual-calc.model';
 import * as lendingCalcs from '../../assets/db/prequal-calc.json';
 import {Observable, ReplaySubject} from 'rxjs';
+import { VehicleInfo } from '../models/vehicle-info.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,10 +24,13 @@ export class PreQualService {
     return this.status;
   }
 
-  public submitPreQualification(payment: number, income: number): void {
-    const customScore = income / payment * 100;
-    this.tier.next(this.lendingCalcs.find(x => x.score.min <= customScore && x.score.max <= customScore).tier);
-
-    this.status.next('Something Here');
+  public submitPreQualification(income: number, payment: number, vehicleData: VehicleInfo): void {
+    const customScore = Math.floor(Math.random() * (400-210) + 210);
+    let lendingCalculation = this.lendingCalcs.find(x => x.score.min <= customScore && x.score.max >= customScore);
+    this.tier.next(lendingCalculation.tier);
+    let paymentToIncome = payment / income * 100;
+    let loanToValue =  vehicleData.payoff / vehicleData.value * 100;
+    let approvedOrDeclined = paymentToIncome <= lendingCalculation.ptiLimit && loanToValue <= lendingCalculation.ltvLimit;
+    this.status.next(approvedOrDeclined? "Approved" : "Declined");
   }
 }

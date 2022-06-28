@@ -25,33 +25,33 @@
     <ion-list>
       <ion-item>
         <ion-select formControlName="income" placeholder="Monthly Income">
-          <ion-select-option value="1000">1000-1999</ion-select-option>
-          <ion-select-option value="2000">2000-2999</ion-select-option>
-          <ion-select-option value="3000">3000-3999</ion-select-option>
-          <ion-select-option value="4000">4000-4999</ion-select-option>
-          <ion-select-option value="5000">5000-5999</ion-select-option>
-          <ion-select-option value="6000">6000-6999</ion-select-option>
-          <ion-select-option value="7000">7000-7999</ion-select-option>
-          <ion-select-option value="100000">Balla</ion-select-option>
+          <ion-select-option value=1000>1000-1999</ion-select-option>
+          <ion-select-option value=2000>2000-2999</ion-select-option>
+          <ion-select-option value=3000>3000-3999</ion-select-option>
+          <ion-select-option value=4000>4000-4999</ion-select-option>
+          <ion-select-option value=5000>5000-5999</ion-select-option>
+          <ion-select-option value=6000>6000-6999</ion-select-option>
+          <ion-select-option value=7000>7000-7999</ion-select-option>
+          <ion-select-option value=100000>Balla</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
     <ion-list>
       <ion-item>
         <ion-select formControlName="payment" placeholder="Current Payment">
-          <ion-select-option value="100">100-199</ion-select-option>
-          <ion-select-option value="200">200-299</ion-select-option>
-          <ion-select-option value="300">300-399</ion-select-option>
-          <ion-select-option value="400">400-499</ion-select-option>
-          <ion-select-option value="500">500-599</ion-select-option>
-          <ion-select-option value="600">600-699</ion-select-option>
-          <ion-select-option value="700">700-799</ion-select-option>
+          <ion-select-option value=100>100-199</ion-select-option>
+          <ion-select-option value=200>200-299</ion-select-option>
+          <ion-select-option value=300>300-399</ion-select-option>
+          <ion-select-option value=400>400-499</ion-select-option>
+          <ion-select-option value=500>500-599</ion-select-option>
+          <ion-select-option value=600>600-699</ion-select-option>
+          <ion-select-option value=700>700-799</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
     <ion-item lines="full">
       <ion-label position="floating">Remaining Balance</ion-label>
-      <ion-input formControlName="payoff" type="text" required></ion-input>
+      <ion-input formControlName="payoff" type="number" required></ion-input>
     </ion-item>
     <ion-button class="submit" (click)="submit()">Qualify Me</ion-button>
   </form>

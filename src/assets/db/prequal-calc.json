@@ -1,13 +1,14 @@
-[{
-  "score": {
-    "min": 210,
-    "max": 224
+[
+  {
+    "score": {
+      "min": 210,
+      "max": 224
+    },
+    "rate": 10.99,
+    "ptiLimit": 13,
+    "ltvLimit": 115,
+    "tier": "B2"
   },
-  "rate": 10.99,
-  "ptiLimit": 13,
-  "ltvLimit": 115,
-  "tier": "B2"
-},
   {
     "score": {
       "min": 225,
@@ -50,7 +51,8 @@
   },
   {
     "score": {
-      "min": 335
+      "min": 335,
+      "max": 100000
     },
     "rate": 4.99,
     "ptiLimit": 17,

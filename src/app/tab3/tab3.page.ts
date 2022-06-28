@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Observable } from 'rxjs';
 import {PreQualService} from '../services/pre-qual.service';
 
 @Component({
@@ -7,11 +8,14 @@ import {PreQualService} from '../services/pre-qual.service';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit{
-  private lendingTier: string;
+  public lendingTier$: Observable<string>;
+  public qualificationStatus$: Observable<string>;
 
-  constructor(private preQualService: PreQualService) {}
+  constructor(private preQualService: PreQualService) {
+  }
 
   public ngOnInit(): void {
-    this.preQualService.lendingTier().subscribe(x => this.lendingTier = x);
+    this.lendingTier$ = this.preQualService.lendingTier$;
+    this.qualificationStatus$ = this.preQualService.qualificationStatus$;
   }
 }

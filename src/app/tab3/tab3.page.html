@@ -14,6 +14,10 @@
   </ion-header>
 
   <ion-item>
-    <ion-label>{{lendingTier}}</ion-label>
+    <ion-label>{{lendingTier$ | async}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>{{qualificationStatus$ | async}}</ion-label>
   </ion-item>
 </ion-content>

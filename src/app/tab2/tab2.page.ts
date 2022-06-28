@@ -33,7 +33,7 @@ export class Tab2Page implements OnInit {
     this.vehicleService.vehicle.subscribe((vehicleInfo: VehicleInfo) => {
       console.log(vehicleInfo);
       this.populateVehicleData(vehicleInfo);
-    })
+    });
   }
 
   public submit(): void{

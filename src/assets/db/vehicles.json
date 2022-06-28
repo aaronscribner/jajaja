@@ -4,8 +4,9 @@
   "make": "Ford",
   "model": "Excursion",
   "year": 2004,
-  "vin": "WAUGVAFR0BA778966",
-  "payoff": "4817",
+  "vin": "1G1AF1F57A7192174",
+  "payoff": 4817,
+  "value": 28391,
   "registrant": {
     "name": "Verene Sparwell",
     "address": "66 2nd Plaza",
@@ -18,7 +19,8 @@
   "model": "Suburban 2500",
   "year": 1999,
   "vin": "WAUBC48H16K510322",
-  "payoff": "8194",
+  "payoff": 8194,
+  "value": 9384,
   "registrant": {
     "name": "Grayce Weeden",
     "address": "483 Northwestern Point",
@@ -31,7 +33,8 @@
   "model": "Golf III",
   "year": 1995,
   "vin": "KL4CJBSB8DB880082",
-  "payoff": "2527",
+  "payoff": 2527,
+  "value": 5743,
   "registrant": {
     "name": "Gibb Hawker",
     "address": "0 Pankratz Parkway",
@@ -44,7 +47,8 @@
   "model": "Mustang",
   "year": 2007,
   "vin": "1GYS3TKJ3FR356593",
-  "payoff": "4125",
+  "payoff": 4125,
+  "value": 23124,
   "registrant": {
     "name": "Pandora Burnitt",
     "address": "24053 Upham Alley",
@@ -57,7 +61,8 @@
   "model": "626",
   "year": 2001,
   "vin": "2HNYD28867H256852",
-  "payoff": "1674",
+  "payoff": 1674,
+  "value": 12343,
   "registrant": {
     "name": "Toma King",
     "address": "9 Claremont Point",
@@ -70,7 +75,8 @@
   "model": "Tahoe",
   "year": 2013,
   "vin": "WBAAW33491E033194",
-  "payoff": "9307",
+  "payoff": 9307,
+  "value": 3412,
   "registrant": {
     "name": "Sallee Floris",
     "address": "68759 Carey Plaza",

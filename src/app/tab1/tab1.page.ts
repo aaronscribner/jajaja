@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {VehicleService} from '../services/vehicle.service';
-import {Router} from '@angular/router';
-import {PhotoService} from '../services/photo.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { VehicleService } from '../services/vehicle.service';
+import { Router } from '@angular/router';
+import { PhotoService } from '../services/photo.service';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { Tesseract } from 'tesseract.ts';
 
@@ -10,47 +11,52 @@ import { Tesseract } from 'tesseract.ts';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   public faCamera = faCamera;
-  private selectedImage: string;
-  public LicensePlate:string = "";
-  public VIN:string = "";
+  public formGroup: FormGroup;
 
   constructor(
+    private formBuilder: FormBuilder,
     private vehicleService: VehicleService,
     private router: Router,
     private photoService: PhotoService
   ) {}
+
+  public ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      plate: [''],
+      vin: ['']
+    });
+  }
 
   public submit(): void {
     this.vehicleService.setCurrentVehicleByPlateNumber('RUBBLE');
     this.router.navigate(['/tabs/tab2']);
   }
 
-  public takeLicensePlatePhoto() {
-    // TODO: OCR the plate, update the form
+  public takeLicensePlatePhoto(): void {
     this.photoService.takePhoto().then((imageData) => {
-        this.recognizePhoto( `data:image/jpeg;base64,${imageData.base64String}`, "LicensePlate");
+      this.ocr(`data:image/jpeg;base64,${imageData.base64String}`).then((data: string) => {
+        this.vehicleService.setCurrentVehicleByPlateNumber(data);
+        this.formGroup.get('plate').setValue(data);
+      });
     });
   }
 
-  public takeVinPhoto() {
-    // TODO: OCR the VIN, update the form
-    this.photoService.takePhoto().then((imageData) => {        
-        this.recognizePhoto( `data:image/jpeg;base64,${imageData.base64String}`, "VIN");
+  public takeVinPhoto(): void {
+    this.photoService.takePhoto().then((imageData) => {
+      this.ocr(`data:image/jpeg;base64,${imageData.base64String}`).then((data: string) => {
+        this.vehicleService.setCurrentVehicleByVin(data);
+        this.formGroup.get('vin').setValue(data);
+      });
     });
   }
 
-  public recognizePhoto(photo, fieldType) {
-     Tesseract.recognize(photo).then((result) => {
-        if(fieldType === "LicensePlate")
-        {
-            this.LicensePlate = result.text;
-        }
-        else
-        {
-            this.VIN = result.text;
-        }
-     });
-   }
+  public ocr(photo: any): Promise<string> {
+    return new Promise(resolve => {
+      Tesseract.recognize(photo).then((result: Tesseract.Page) => {
+        return new Promise(ocrResolve => resolve(result.text));
+      });
+    });
+  }
 }

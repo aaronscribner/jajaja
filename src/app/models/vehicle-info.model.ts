@@ -7,6 +7,7 @@ export class VehicleInfo{
   public model: string;
   public year: string;
   public vin: string;
-  public payoff: string;
+  public payoff: number;
+  public value: number;
   public registrant: Registrant;
 }

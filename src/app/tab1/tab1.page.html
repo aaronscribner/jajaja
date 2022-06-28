@@ -13,16 +13,16 @@
         </ion-toolbar>
     </ion-header>
 
-    <form>
+    <form [formGroup]="formGroup">
         <ion-item class="input" lines="full">
             <ion-label position="floating">License Plate</ion-label>
-            <ion-input type="text" name="LicensePlate" [(ngModel)]="LicensePlate"></ion-input>
+            <ion-input formControlName="plate" type="text" name="LicensePlate"></ion-input>
         </ion-item>
         <fa-icon (click)="takeLicensePlatePhoto()" class="camera-icon" [icon]="faCamera"></fa-icon>
 
         <ion-item class="input" lines="full">
             <ion-label position="floating">VIN</ion-label>
-            <ion-input type="text" name="VIN" [(ngModel)]="VIN"></ion-input>
+            <ion-input type="text" formControlName="vin" name="VIN"></ion-input>
         </ion-item>
         <fa-icon (click)="takeVinPhoto()" class="camera-icon" [icon]="faCamera"></fa-icon>
     </form>
